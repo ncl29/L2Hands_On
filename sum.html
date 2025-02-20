@@ -3,19 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sum Calculator</title>
+  <title>L2Hands_On</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      margin: 0;
+      padding: 50px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    button {
+      background: #ffcc00;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #ff9900;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Sum Calculator</h1>
+    <button onclick="calculateSum()">Calculate Sum</button>
+  </div>
+
   <script>
-       function addNumbers(a, b) {
+    function addNumbers(a, b) {
       return a + b;
     }
 
-    let num1 = parseFloat(prompt("Enter the first number:"));
-    let num2 = parseFloat(prompt("Enter the second number:"));
+    function calculateSum() {
+      let num1 = parseFloat(prompt("Enter the first number:"));
+      let num2 = parseFloat(prompt("Enter the second number:"));
 
-    let sum = addNumbers(num1, num2);
-    alert("The sum is: " + sum);
+      if (isNaN(num1) || isNaN(num2)) {
+        alert("Please enter valid numbers.");
+      } else {
+        let sum = addNumbers(num1, num2);
+        alert("The sum is: " + sum);
+      }
+    }
   </script>
 </body>
 </html>
